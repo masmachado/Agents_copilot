@@ -1,0 +1,122 @@
+
+
+name: pipelineErrado
+clusters:
+  - cluster_name: testeCluster
+notebooks:
+  - notebook_path: "/Workspace/Repos/user/projeto/notebooks/processa_dados"
+schedule: "* * * * *"
+
+
+
+job_name: executar_notebook
+cluster: small
+task:
+  - notebook: "/projeto/notebook/processamento"
+
+
+
+name: pipeline123
+description: "processo qualquer"
+
+
+
+
+name: job_incorreto
+cluster_id: "12345"
+notebook_task:
+  notebook_path: "/Repos/empresa/projeto/notebooks/etl"
+parameters:
+  DATA_REF: "2024-01-01"
+
+
+
+pipeline:
+  name: dlt_pipeline_ruim
+  tables:
+    - name: clientes_trusted
+      sql: SELECT * FROM bronze.client;
+
+
+
+table:
+  name: tabela_temp
+  location: /mnt/refined/tmp
+
+
+Config:
+  caminho: "/mnt/bronze/dados"
+  TabelaFinal: "tblFINAL123"
+  Execução: "sim"
+
+
+
+
+job:
+  nome: meuJob
+  steps:
+    step1: {
+      notebook: "/notebooks/teste",
+      cluster: "abc"
+    }
+
+
+
+name: pipeline_sem_padrao
+
+tasks:
+  - name: step
+    notebook_path: "/Workspace/notebook1"
+  - name: step
+    notebook_path: "/Workspace/notebook2"
+
+
+name:
+    pipeline_quebrado
+tasks:
+ - name: etapa1
+   notebook_path: "notebook_a"
+   cluster: small
+   retries:
+       count: 3
+      delay: 10
+
+
+
+name: dlt_pipeline_errado
+
+tasks:
+  - name: main_task
+    notebook_path: "/Repos/user/projeto/notebooks/dlt_ingestao"
+
+
+
+config:
+  catalogo: "producao_x"
+  caminhoBronze: "/mnt/bronze_xxx"
+  caminhoRefined: "/mnt/refined_abc"
+
+
+
+job_name: job_que_roda_pipeline
+
+pipeline:
+  - "/mnt/pipelines/p1"
+
+
+
+name: pipeline_databricks
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - run: spark-submit script.py
+
+
+
+job_name: job_invalido
