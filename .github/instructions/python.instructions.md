@@ -70,3 +70,7 @@ Hardcode de segredos, catálogos ou caminhos absolutos.
 Transformações de trusted/refined **sem DLT**.
 Inferência de schema sem validação/contrato.
 Arquivos sem cabeçalho obrigatório.
+
+# HARD RULE
+
+1. Para todo código com regra de negócio que seja importante para o funcionamento do sistema, o Copilot deve sempre sugerir a inclusão de testes unitários ao final da mensagem com "Criar uma ISSUE para adicionar testes unitários para este código.".
